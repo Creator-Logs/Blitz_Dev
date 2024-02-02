@@ -3,6 +3,8 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -43,8 +45,8 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyB_xh5dck-5-f2ZhbMRObMNB5G4crRuZFc',
+  static FirebaseOptions web = FirebaseOptions(
+    apiKey: dotenv.env['API_KEY_WEB'] ?? 'API URL NOT FOUND',
     appId: '1:436776826745:web:e557f811d07172569ae1a8',
     messagingSenderId: '436776826745',
     projectId: 'blitzdatabase-4a130',
@@ -52,16 +54,16 @@ class DefaultFirebaseOptions {
     storageBucket: 'blitzdatabase-4a130.appspot.com',
   );
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCvUoLZBdw_nsqfN9uckmF6H22_upFUdq4',
+  static FirebaseOptions android = FirebaseOptions(
+    apiKey: dotenv.env['API_KEY_ANDROID'] ?? 'API URL NOT FOUND',
     appId: '1:436776826745:android:7b31519d7cbbb68f9ae1a8',
     messagingSenderId: '436776826745',
     projectId: 'blitzdatabase-4a130',
     storageBucket: 'blitzdatabase-4a130.appspot.com',
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBcOd3yXilx_3GfmDglTgnULC94-Y33Dm4',
+  static FirebaseOptions ios = FirebaseOptions(
+    apiKey: dotenv.env['API_KEY_IOS'] ?? 'API URL NOT FOUND',
     appId: '1:436776826745:ios:f443c569ea495d639ae1a8',
     messagingSenderId: '436776826745',
     projectId: 'blitzdatabase-4a130',
@@ -69,8 +71,8 @@ class DefaultFirebaseOptions {
     iosBundleId: 'com.example.blitz',
   );
 
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBcOd3yXilx_3GfmDglTgnULC94-Y33Dm4',
+  static FirebaseOptions macos = FirebaseOptions(
+    apiKey: dotenv.env['API_KEY_MACOS'] ?? 'API URL NOT FOUND',
     appId: '1:436776826745:ios:852f3396cbb9fa6b9ae1a8',
     messagingSenderId: '436776826745',
     projectId: 'blitzdatabase-4a130',

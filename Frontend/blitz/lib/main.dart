@@ -5,11 +5,14 @@ import 'package:blitz/pages/dashboard/barchart/progress_chart.dart';
 import 'package:blitz/pages/dashboard/dashboard.dart';
 import 'package:blitz/pages/login_reg/prompt_page.dart';
 import 'package:blitz/theme/theme.dart';
+
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load();
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
